@@ -1,0 +1,19 @@
+.center-content {
+  
+    display:block;
+    text-align: center;
+    margin: 0 auto;
+
+
+}
+
+.center-table {
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top: 10%;
+
+
+}
+
