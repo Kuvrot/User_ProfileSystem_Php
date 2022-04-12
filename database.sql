@@ -14,3 +14,4 @@ CREATE TABLE Users(
 INSERT INTO Users (m_username , m_password , m_email, m_description) VALUES ("admin" , "123456789" , "john@doe.com" , "Soy el admin");
 
 Select * from Users;
+SELECT m_username , m_email , m_description FROM Users WHERE m_username = "admin";
