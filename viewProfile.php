@@ -16,10 +16,11 @@ include 'connect.php';
 
 </head>
 <body>
-<nav class="nav nav-pills nav-justified">
+<nav class="nav nav-pills nav-justified w-50 center-table">
         <a class="nav-link" aria-current="page" href="index.html">HOME</a>
-        <a class="nav-link" href="login.html">LOGIN</a>
+        <a class="nav-link" href="login.html">LOG IN</a>
         <a class="nav-link" href="signin.html">SIGN IN UP</a>
+        <a class="nav-link" href="editProfile.php">SEE YOUR PROFILE</a>
 </nav>
 <?php 
 if (isset($_GET['user'])){

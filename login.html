@@ -11,24 +11,24 @@
 </head>
 <body>
 
-    <nav class="nav nav-pills nav-justified">
+  <nav class="nav nav-pills nav-justified w-50 center-table">
         <a class="nav-link " aria-current="page" href="index.html">HOME</a>
         <a class="nav-link active" href="login.html">LOGIN</a>
         <a class="nav-link" href="signin.html">SIGN IN UP</a>
     </nav>
     
-    <form class="center-content" style="margin-top:10%">
+    <form class="center-content" style="margin-top:10%" action="sessionManager.php" method="post">
         <div class="mb-3 w-25 center-content">
             <label for="l_username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="l_username">
+            <input type="text" class="form-control" id="l_username" name="ll_username">
         </div>
         <div class="mb-3 w-25 center-content">
           <label for="l_password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="l_password">
+          <input type="password" class="form-control" id="l_password" name="ll_password">
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" id="login" class="btn btn-primary">Login</button>
+        <p>You dont have an account yet? create one <a href="signin.html">here</a></p>
       </form>
-
 
       
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
