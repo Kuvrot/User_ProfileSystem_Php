@@ -6,16 +6,28 @@ include 'sessionManager.php';
 $stmt = $conn->query("SELECT m_username FROM Users");
 $name = "";
 
+if (isset($_SESSION['m_username'])){
+    ?> 
+    <nav class="nav nav-pills nav-justified w-50 center-table">
+        <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+        <a class="nav-link" href="seemyprofile.php">SEE YOUR PROFILE</a>
+        <a class="nav-link" href="logout.php">LOG OUT</a>
+    </nav>
+    
+    <h2 class="w-25">You are logged as <?php echo $_SESSION['m_username'];?> </h2>
+<?php }else{
+    ?> 
+    <nav class="nav nav-pills nav-justified w-50 center-table">
+        <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+        <a class="nav-link" href="login.html">LOGIN</a>
+        <a class="nav-link" href="signin.html">SIGN IN UP</a>
+    </nav>
+    <h2 class="w-25">You are not logged yet </h2> <?php
+}
+
 while ($row = $stmt->fetch()) {
 
     $name = $row['m_username'];
-
-
-    if ($session_active){
-       ?> <h2 class="w-25">You are logged as <?php echo $current_user;?> </h2>
-   <?php }{
-       ?> <h2 class="w-25">You are not logged yet <?php echo $current_user;?> </h2> <?php
-   }
 
    ?>
 

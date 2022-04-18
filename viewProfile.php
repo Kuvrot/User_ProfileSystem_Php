@@ -1,6 +1,6 @@
 <?php 
 include 'connect.php';
-//include 'getUsers.php';
+include 'sessionManager.php';
 
 ?>
 
@@ -16,13 +16,25 @@ include 'connect.php';
 
 </head>
 <body>
-<nav class="nav nav-pills nav-justified w-50 center-table">
-        <a class="nav-link" aria-current="page" href="index.html">HOME</a>
-        <a class="nav-link" href="login.html">LOG IN</a>
-        <a class="nav-link" href="signin.html">SIGN IN UP</a>
-        <a class="nav-link" href="editProfile.php">SEE YOUR PROFILE</a>
+<?php
+if (isset($_SESSION['m_username'])){
+  ?> 
+  <nav class="nav nav-pills nav-justified w-50 center-table">
+  <a class="nav-link" aria-current="page" href="index.html">HOME</a>
+  <a class="nav-link" href="logout.php">LOG OUT</a>
+  <a class="nav-link" href="editProfile.php">SEE YOUR PROFILE</a>
 </nav>
+  <?php
+}else{
+  ?> <nav class="nav nav-pills nav-justified w-50 center-table">
+  <a class="nav-link" aria-current="page" href="index.html">HOME</a>
+  <a class="nav-link" href="login.html">LOG IN</a>
+  <a class="nav-link" href="signin.html">SIGN IN UP</a>
+</nav>
+
 <?php 
+}
+
 if (isset($_GET['user'])){
     $name = $_GET['user'];
     $stmt = $conn->query("SELECT m_username , m_email , m_description FROM Users WHERE m_username = '$name'");
