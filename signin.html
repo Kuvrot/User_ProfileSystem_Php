@@ -17,11 +17,11 @@
         <a class="nav-link active" href="signin.html">SIGN IN UP</a>
     </nav>
 
-    <form class="center-content" style="margin-top:10%">
+    <form class="center-content" style="margin-top:2.5%" id="signin">
         <div class="mb-3 w-25 center-content">
           <label for="s_email w-25" class="form-label">Email address</label>
           <input type="email" class="form-control" id="s_email" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <div id="emailHelp" class="form-text">Warning: Your email will be shown public</div>
         </div>
         <div class="mb-3 w-25 center-content">
             <label for="s_username" class="form-label">Username</label>
@@ -35,18 +35,24 @@
             <label for="s_password_2" class="form-label">Confirm password</label>
             <input type="password" class="form-control" id="s_password_2">
           </div>
-        <div class="mb-3 form-check w-25 center-content">
-          <input type="checkbox" class="form-check-input" id="terms">
-          <label class="form-check-label" for="terms">I accept the terms and conditions</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <div class="mb-3 w-50 h-50 center-content">
+          <label for="s_username" class="form-label">Write something about you</label>
+          <textarea class="form-control" id="s_bio"></textarea>
+      </div>
+      <div class="mb-3 form-check w-25 center-content">
+        <input type="checkbox" class="form-check-input" id="terms">
+        <label class="form-check-label" for="terms">I accept the terms and conditions</label>
+      </div>
+        <button style="margin-bottom: 1%;" type="submit" class="btn btn-primary">Sign in up</button>
+        <h3 style="text-align:center; color:red;" id="signin_warning"></h3>
       </form>
 
+      
 
       
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>   
-<script src="main.js"></script>
+<script src="main_signin.js"></script>
 </body>
 
 </html>

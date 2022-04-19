@@ -16,30 +16,15 @@ include 'sessionManager.php';
 
 </head>
 <body>
-<?php
-if (isset($_SESSION['m_username'])){
-  ?> 
-  <h2 style="text-align:right; margin-right:5%;">You are logged as <a href="editprofile.php"style="color:blue;"><?php echo $_SESSION['m_username'];?></a> </h2>
-  <nav class="nav nav-pills nav-justified w-50 center-table">
-  <a class="nav-link" aria-current="page" href="index.html">HOME</a>
-  <a class="nav-link" href="logout.php">LOG OUT</a>
-  <a class="nav-link" href="editProfile.php">SEE YOUR PROFILE</a>
+<nav class="nav nav-pills nav-justified w-50 center-table">
+        <a class="nav-link" aria-current="page" href="index.html">HOME</a>
+        <a class="nav-link" href="editingProfile.php">EDIT PROFILE</a>
+        <a class="nav-link" href="logout.php">LOG OUT</a>
+        <a class="nav-link active" href="seemyprofile.php">SEE YOUR PROFILE</a>
 </nav>
-  <?php
-}else{
-  ?>
-  <h2 style="text-align:right; margin-right:5%;">You are not logged yet </h2> 
-  <nav class="nav nav-pills nav-justified w-50 center-table">
-  <a class="nav-link" aria-current="page" href="index.html">HOME</a>
-  <a class="nav-link" href="login.html">LOG IN</a>
-  <a class="nav-link" href="signin.html">SIGN IN UP</a>
-</nav>
-
 <?php 
-}
-
-if (isset($_GET['user'])){
-    $name = $_GET['user'];
+if (isset($_SESSION['m_username'])){
+    $name = $_SESSION['m_username'];
     $stmt = $conn->query("SELECT m_username , m_email , m_description FROM Users WHERE m_username = '$name'");
 if ($row = $stmt->fetch()){
 ?>
