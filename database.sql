@@ -1,9 +1,9 @@
 use `users_test`;
-
+drop Users;
 CREATE TABLE Users(
 		
         id int auto_increment,
-        m_username varchar(10),
+        m_username varchar(20),
         m_password varchar (20),
         m_email varchar(30),
         m_description varchar(255),

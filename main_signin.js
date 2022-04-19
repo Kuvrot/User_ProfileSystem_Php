@@ -10,13 +10,13 @@ type: "post",
 contentType:false,
 dataType:false,
 processData:false,
-url: "",
+url: "sessionManager.php",
 data:signindata,
 
 success: function (result){
 
-    console.log(result);
     console.log("succesfull connection");
+    $("#signin_warning").html(result);
 
 }
 
