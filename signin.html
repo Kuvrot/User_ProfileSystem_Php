@@ -20,24 +20,24 @@
     <form class="center-content" style="margin-top:2.5%" id="signin">
         <div class="mb-3 w-25 center-content">
           <label for="s_email w-25" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="s_email" name="ss_email" aria-describedby="emailHelp">
+          <input type="email" maxlength="30" class="form-control" id="s_email" name="ss_email" aria-describedby="emailHelp">
           <div id="emailHelp" class="form-text">Warning: Your email will be shown public</div>
         </div>
         <div class="mb-3 w-25 center-content">
             <label for="s_username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="s_username" name="ss_username">
+            <input type="text" class="form-control" maxlength="20" id="s_username" name="ss_username">
         </div>
         <div class="mb-3 w-25 center-content">
           <label for="s_password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="s_password" name="ss_password">
+          <input type="password" class="form-control" maxlength="20" id="s_password" name="ss_password">
         </div>
         <div class="mb-3 w-25 center-content">
             <label for="s_password_2" class="form-label">Confirm password</label>
-            <input type="password" class="form-control" id="s_password_2" name="ss_password_confirmation">
+            <input type="password" class="form-control"  maxlength="20" id="s_password_2" name="ss_password_confirmation">
           </div>
         <div class="mb-3 w-50 h-50 center-content">
           <label for="s_bio" class="form-label">Write something about you</label>
-          <textarea class="form-control" id="s_bio" name="ss_bio"></textarea>
+          <textarea class="form-control" id="s_bio"  maxlength="255" name="ss_bio"></textarea>
       </div>
       <div class="mb-3 form-check w-25 center-content">
         <input type="checkbox" class="form-check-input" id="terms">

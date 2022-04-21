@@ -4,7 +4,7 @@ $session_active = false;
 $current_user = "";
 session_start();
 
-//sign in
+//Log in
 if (isset($_POST['ll_username']) && isset($_POST['ll_password'])){
 
 $l_username = $_POST['ll_username'];
@@ -12,13 +12,17 @@ $l_password = $_POST['ll_password'];
 
 
 
-$stmt = $conn->query("SELECT m_username , m_password FROM Users WHERE m_username = '$l_username' AND m_password = '$l_password'");
+$stmt = $conn->query("SELECT * FROM Users WHERE m_username = '$l_username' AND m_password = '$l_password'");
 
 if ($row = $stmt->fetch()){
 
     ?> <p><?php echo "Session started";?> </p><?php
     $session_active = true;
     $_SESSION['m_username'] = $row['m_username'];
+    $_SESSION['m_password'] = $row['m_password'];
+    $_SESSION['m_email'] = $row['m_email'];
+    $_SESSION['m_bio'] = $row['m_description'];
+    $_SESSION['m_id'] = $row['id'];
     
     ?> 
     <p><cite>Log in succesfully</cite></p>
@@ -34,14 +38,14 @@ if ($row = $stmt->fetch()){
 
 }
 
-
+//Sign in
 if (isset($_POST['ss_username']) && isset($_POST['ss_email']) && isset($_POST['ss_password']) && isset($_POST['ss_password_confirmation'])){
 
     $s_username = $_POST['ss_username'];
     $s_email = $_POST['ss_email'];
 
     $stmt_1 = $conn->query("SELECT m_username FROM Users WHERE m_username = '$s_username'");
-    $stmt_2 = $conn->query("SELECT m_email FROM Users WHERE m_username = '$s_email'");
+    $stmt_2 = $conn->query("SELECT m_email FROM Users WHERE m_email = '$s_email'");
     
 
     if ($row = $stmt_1->fetch()){
@@ -85,6 +89,16 @@ if (isset($_POST['ss_username']) && isset($_POST['ss_email']) && isset($_POST['s
                         ]);
 
                         $_SESSION['m_username'] = $s_username;
+                        $_SESSION['m_email'] = $_POST['ss_email'];
+                        $_SESSION['m_bio'] = $_POST['ss_bio'];
+                        $_SESSION['m_password'] = $_POST['m_password'];
+
+                        $getid = $conn->query("SELECT id FROM Users WHERE m_username = '$_username'");
+
+                        if ($m_row = $getid->fetch()){
+                            $_SESSION['m_id'] = $m_row['id'];
+                        }
+
                         ?> 
 
                         <p><cite>Registered succesfully</cite></p>

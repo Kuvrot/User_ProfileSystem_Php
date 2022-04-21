@@ -1,5 +1,7 @@
+CREATE DATABASE users_test;
+
 use `users_test`;
-drop Users;
+
 CREATE TABLE Users(
 		
         id int auto_increment,
