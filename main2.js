@@ -14,6 +14,9 @@ $("#login").submit(function(e){
       success: function( result) {
         console.log(result);
         $("#login_status").html(result);
+
+        if (result==1)
+          window.location='index.html';
   
       }
   

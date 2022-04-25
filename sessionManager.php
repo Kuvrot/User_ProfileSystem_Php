@@ -16,17 +16,17 @@ $stmt = $conn->query("SELECT * FROM Users WHERE m_username = '$l_username' AND m
 
 if ($row = $stmt->fetch()){
 
-    ?> <p><?php echo "Session started";?> </p><?php
+    ?> <?php
     $session_active = true;
     $_SESSION['m_username'] = $row['m_username'];
     $_SESSION['m_password'] = $row['m_password'];
     $_SESSION['m_email'] = $row['m_email'];
     $_SESSION['m_bio'] = $row['m_description'];
     $_SESSION['m_id'] = $row['id'];
-    
+    echo $session_active;
+
+    //header("Location:index.php");
     ?> 
-    <p><cite>Log in succesfully</cite></p>
-    <a href="index.html" class="list-group-item list-group-item-action w-25 center-content"> GO HOME</a>
 
     <?php
 
